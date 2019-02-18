@@ -618,10 +618,10 @@ void showTheTimeCallback(Task* me)
   if (cHr == 0) {
     cHr = 12;
   }
-  // get current seconds to display in the corner of the oled
+  // get current seconds to display in the corner of the OLED
   int secs = bcd2bin( rtc.Seconds10, rtc.Seconds);
   sprintf(buffer, "%02d:%02d", cHr, bcd2bin( rtc.Minutes10, rtc.Minutes));
-  // show the time on the oled
+  // show the time on the OLED
   display.clearDisplay();
   display.setFont(&FreeSansBold9pt7b);
   display.setTextSize(2);
@@ -681,7 +681,7 @@ void onPressed() {
 }
 // SoftTimer task to show start showing the menu
 void showSetMenuCallback(Task* me) {
-  // star the display - send the number of button clicks to the funtion
+  // start the display - send the number of button clicks to the function
   showMenu(c);
 }
 // function shows the current menu item based on count of button presses
@@ -714,7 +714,7 @@ void showMenu(int c) {
     oldval = oldyear;
     year = oldyear + 2000;
   }
-  // oled will display the current value as oldval
+  // OLED will display the current value as oldval when we are in the set menu
   sprintf(buffer, "Set %s", type);
   display.clearDisplay();
   display.setTextSize(1);
@@ -726,7 +726,7 @@ void showMenu(int c) {
   display.print(oldval);
   display.display();
 }
-//Function needed or debounce
+//Function needed for debounce
 void onReleased(unsigned long pressTimespan) {
   Serial.print(pressTimespan);
   Serial.println(F(" - released"));
