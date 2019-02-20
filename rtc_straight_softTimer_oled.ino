@@ -535,7 +535,9 @@ void setTheTime(int hours, int minutes, int month, int dayofmonth, int year)
 {      
 
   Serial.println(F("Gonna write time"));
-  Serial.println(hours);
+  char buffer[20];
+  sprintf(buffer, "%02d:%02d %02d/%02d/%d", hours, minutes, month, dayofmonth, year);
+  Serial.println(buffer);
   // Start by clearing the Write Protect bit
   // Otherwise the clock data cannot be written
   // The whole register is written, 
@@ -582,7 +584,7 @@ void setTheTime(int hours, int minutes, int month, int dayofmonth, int year)
   //    rtc.h12.hour_12_24 = 0; // 1 for 24 hour format
   rtc.h24.Hour   = bin2bcd_l( hours);
   rtc.h24.Hour10 = bin2bcd_h( hours);
-  rtc.h24.hour_12_24 = 1; // 0 for 24 hour format
+  rtc.h24.hour_12_24 = 0; // 0 for 24 hour format
   rtc.Date       = bin2bcd_l( dayofmonth);
   rtc.Date10     = bin2bcd_h( dayofmonth);
   rtc.Month      = bin2bcd_l( month);
@@ -600,7 +602,7 @@ void setTheTime(int hours, int minutes, int month, int dayofmonth, int year)
 // task will run to show the time every second
 void showTheTimeCallback(Task* me) 
 {
-  char buffer[12];     // the code uses 6 characters.
+  char buffer[20];     // the code uses 6 characters.
   
   // Read all clock data at once (burst mode).
   DS1302_clock_burst_read( (uint8_t *) &rtc);
@@ -617,10 +619,12 @@ void showTheTimeCallback(Task* me)
   }
   if (cHr == 0) {
     cHr = 12;
+    ampm = "AM";
   }
   // get current seconds to display in the corner of the OLED
   int secs = bcd2bin( rtc.Seconds10, rtc.Seconds);
   sprintf(buffer, "%02d:%02d", cHr, bcd2bin( rtc.Minutes10, rtc.Minutes));
+  //Serial.println(buffer);
   // show the time on the OLED
   display.clearDisplay();
   display.setFont(&FreeSansBold9pt7b);
@@ -639,7 +643,7 @@ void showTheTimeCallback(Task* me)
     bcd2bin( rtc.Month10, rtc.Month), \
     bcd2bin( rtc.Date10, rtc.Date), \
     2000 + bcd2bin (rtc.Year10, rtc.Year));
-  
+  //Serial.println(buffer);
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(20, 60);
@@ -686,7 +690,7 @@ void showSetMenuCallback(Task* me) {
 }
 // function shows the current menu item based on count of button presses
 void showMenu(int c) {
-  char buffer[10]; // buffer to hold characters for printing
+  char buffer[20]; // buffer to hold characters for printing
   // find the number of set button presses and display appropriate values, if we 
   // never change values, then use the old values to set the time
   if (c == 1) {
@@ -728,8 +732,8 @@ void showMenu(int c) {
 }
 //Function needed for debounce
 void onReleased(unsigned long pressTimespan) {
-  Serial.print(pressTimespan);
-  Serial.println(F(" - released"));
+  //Serial.print(pressTimespan);
+  //Serial.println(F(" - released"));
 }
 
 // function runs when we press the changevalue button
