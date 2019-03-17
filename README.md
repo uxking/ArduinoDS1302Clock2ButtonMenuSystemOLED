@@ -7,8 +7,7 @@ Much of the work for the clock was done via the provided playground sketch.
 ## Schematic
 Find a schematic of the circuit at: in the repo at Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
 
-        ![OLED DS1302 Schematic](
-        ArduinoDS1302Clock2ButtonMenuSystemOLED/OLED_Schematic.PNG?raw=True)
+![OLED DS1302 Schematic](ArduinoDS1302Clock2ButtonMenuSystemOLED/OLED_Schematic.PNG?raw=True)
       
       
 
