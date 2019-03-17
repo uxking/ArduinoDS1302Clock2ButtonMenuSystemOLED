@@ -21,7 +21,7 @@ to set 30 days for Feb, or 31 days for March, etc... Perhaps I'll fix in a later
  - Add a flag/button to switch from 24hr time to 12hr time.
 
 ## Schematic
-PDF of the circuit at: Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
+[PDF of the circuit at:](docs/Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf)
 
 ![OLED DS1302 Schematic](docs/OLED_Schematic.PNG?raw=True)
       
