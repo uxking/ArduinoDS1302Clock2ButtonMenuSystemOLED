@@ -23,5 +23,5 @@ to set 30 days for Feb, or 31 days for March, etc... Perhaps I'll fix in a later
 ## Schematic
 PDF of the circuit at: Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
 
-![OLED DS1302 Schematic](ArduinoDS1302Clock2ButtonMenuSystemOLED/docs/OLED_Schematic.PNG?raw=True)
+![OLED DS1302 Schematic](docs/OLED_Schematic.PNG?raw=True)
       
