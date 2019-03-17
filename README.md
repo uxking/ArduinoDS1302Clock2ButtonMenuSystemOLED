@@ -2,7 +2,12 @@
 Arduino with a DS1302 Real Time Clock Module and two buttons for setting time and date.  
 Utilizes the SoftTimer library at: https://github.com/prampec/arduino-softtimer  
 Original DS1302 code was created by Krodel at: http://playground.arduino.cc/Main/DS1302  
-Mucho of the work for the clock was done via the provided playground sketch.
+Much of the work for the clock was done via the provided playground sketch.
+
+## Schematic
+Find a schematic of the circuit at: 
+        ![OLED DS1302 Schematic](ArduinoDS1302Clock2ButtonMenuSystemOLED/Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf)
+      
 
 ## OLED
 OLED was a SSD1306 128x64 using the Adafruit SSD1306 library  
