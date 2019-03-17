@@ -5,7 +5,7 @@ Original DS1302 code was created by Krodel at: http://playground.arduino.cc/Main
 Much of the work for the clock was done via the provided playground sketch.
 
 ## Schematic
-Find a schematic of the circuit at: Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
+Find a schematic of the circuit at: ../Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
         ![OLED DS1302 Schematic]
       
 
