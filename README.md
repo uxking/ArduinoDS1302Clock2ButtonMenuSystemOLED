@@ -3,14 +3,7 @@ Arduino with a DS1302 Real Time Clock Module and two buttons for setting time an
 Utilizes the SoftTimer library at: https://github.com/prampec/arduino-softtimer  
 Original DS1302 code was created by Krodel at: http://playground.arduino.cc/Main/DS1302  
 Much of the work for the clock was done via the provided playground sketch.
-
-## Schematic
-Find a schematic of the circuit at: in the repo at Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
-
-![OLED DS1302 Schematic](OLED_Schematic.PNG?raw=True)
       
-      
-
 ## OLED
 OLED was a SSD1306 128x64 using the Adafruit SSD1306 library  
 ### Other Notes
@@ -27,3 +20,8 @@ set the AM/PM variable to display on the OLED.
 to set 30 days for Feb, or 31 days for March, etc... Perhaps I'll fix in a later release.
  - Add a flag/button to switch from 24hr time to 12hr time.
 
+## Schematic
+Find a schematic of the circuit at: in the repo at Arduino_DS1302_RTC_Clock_with_OLED_2_Button.pdf
+
+![OLED DS1302 Schematic](OLED_Schematic.PNG?raw=True)
+      
